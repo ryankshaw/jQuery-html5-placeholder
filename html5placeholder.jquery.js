@@ -21,7 +21,7 @@
       //first test for native placeholder support before continuing
       //feature detection inspired by ye olde jquery 1.4 hawtness, with paul irish
       // Added support for <textarea>s in browsers that support the placeholder tag only on input elements (safari)
-      if ( "placeholder" === typeof(document.createElement(this.tagName.toLowerCase()).placeholder)) {
+      if ( !("placeholder"  in document.createElement(this.tagName.toLowerCase()))) {
         var $this = $(this),
             //grab the inputs id for the <label for>, or make a new one from the Date
             //ids can start with numbers in html5, btw
